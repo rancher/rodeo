@@ -43,4 +43,4 @@ When provisioning is finished the Rancher Server will be available via SSH at `1
 
 ### How to Remove
 
-To remove the VMs that have been deployed run `vagrant destroy -f`
+To remove the VMs that have been deployed run `vagrant destroy -f`. The configuration uses linked clones, so if you want to destroy the origin instance, open the VirtualBox Manager and remove the base `ubuntu-xenial` instance left behind.
