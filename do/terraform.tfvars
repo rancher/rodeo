@@ -1,5 +1,5 @@
 # DigitalOcean API token
-do_token = "your_token"
+do_token = "63c0ecbb615bb346c84fb67739c05aeddd93a1848870dcec0ef79a5ec61a15a1"
 # Admin password to access Rancher
 admin_password = "admin"
 # Resources will be prefixed with this to avoid clashing names
