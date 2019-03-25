@@ -165,6 +165,7 @@ function install_docker() {
     elif [ `command -v wget` ]; then
       wget -qO- https://releases.rancher.com/install-docker/${docker_version}.sh | sh
     fi
+    usermod -aG docker vagrant
   else
     echo "Skipping Docker install."
   fi
