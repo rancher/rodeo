@@ -60,7 +60,6 @@ variable "ssh_keys" {
 }
 
 resource "digitalocean_droplet" "rancherserver" {
-  count     = "1"
   image     = "ubuntu-16-04-x64"
   name      = "${var.prefix}-rancherserver"
   region    = "${var.region}"
