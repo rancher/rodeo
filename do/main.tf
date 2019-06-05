@@ -131,6 +131,10 @@ data "template_file" "userdata_agent" {
   }
 }
 
-output "rancher-url" {
-  value = ["https://${digitalocean_droplet.rancherserver.ipv4_address}"]
+output "rancher-server-ip" {
+  value = ["${digitalocean_droplet.rancherserver.ipv4_address}"]
 }
+
+output "rancher-agent-ips" {
+    value = ["${digitalocean_droplet.rancheragent-all.*.ipv4_address}"]
+} 
