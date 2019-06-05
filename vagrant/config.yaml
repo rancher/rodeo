@@ -1,5 +1,5 @@
 default_password: admin
-rancher_version: v2.1.7
+rancher_version: v2.2.4
 cluster_name: rodeo
 rodeo: true
 docker_version:
