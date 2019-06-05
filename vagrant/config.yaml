@@ -7,7 +7,7 @@ docker_version:
   node: "18.09"
 server:
   cpus: 1
-  memory: 2000
+  memory: 2560
 node:
   count: 1
   cpus: 2
