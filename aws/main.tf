@@ -269,6 +269,10 @@ data "template_file" "userdata_agent" {
   }
 }
 
-output "rancher-url" {
-  value = ["https://${aws_instance.rancherserver.public_ip}"]
+output "rancher-server-ip" {
+  value = ["${aws_instance.rancherserver.public_ip}"]
 }
+
+output "rancher-agent-ips" {
+    value = ["${aws_instance.rancheragent-all.*.public_ip}"]
+} 
