@@ -1,0 +1,37 @@
+image:
+  tag: ""
+
+server:
+  password: changeme
+  maxClients: 12
+
+fragLimit: 25
+timeLimit: 15m
+bot:
+  minPlayers: 3
+
+game:
+  type: FreeForAll
+  forceRespawn: false
+  inactivity: 10m
+  quadFactor: 3
+  weaponRespawn: 3
+
+commands:
+- addbot sarge 2
+maps:
+- name: q3dm7
+  type: FreeForAll
+  timeLimit: 10m
+- name: q3dm17
+  type: FreeForAll
+- name: q3wctf1
+  type: CaptureTheFlag
+  captureLimit: 8
+- name: q3tourney2
+  type: Tournament
+- name: q3wctf3
+  type: CaptureTheFlag
+  captureLimit: 8
+- name: ztn3tourney1
+  type: Tournament

@@ -1,0 +1,8 @@
+FROM quay.io/helmpack/chart-testing:latest
+
+RUN apk add make
+
+ENV DAPPER_SOURCE /repo
+WORKDIR ${DAPPER_SOURCE}
+
+ENTRYPOINT ["make"]

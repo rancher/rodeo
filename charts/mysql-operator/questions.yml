@@ -1,0 +1,80 @@
+questions:
+  - variable: mysql-operator.ingress.enabled
+    default: true
+    type: boolean
+    label: Expose app using Layer 7 Load Balancer
+    show_subquestion_if: true
+    group: "Services and Load Balancing"
+    subquestions:
+      - variable: mysql-operator.ingress.hosts.0.host
+        default: "sslip.io"
+        type: hostname
+        required: true
+        label: Hostname
+      - variable: ingress.auth.user
+        default: "admin"
+        type: string
+        required: true
+        label: Authentication user name
+      - variable: ingress.auth.password
+        default: "admin"
+        type: string
+        required: true
+        label: Authentication password
+  - variable: database.create
+    default: true
+    type: boolean
+    label: Create initial database
+    show_subquestion_if: true
+    group: "Database"
+    subquestions:
+      - variable: database.name
+        default: "db"
+        type: string
+        required: true
+        label: Cluster name
+      - variable: database.size
+        default: "1Gi"
+        type: string
+        required: true
+        label: Storage size
+      - variable: database.replicas
+        default: 3
+        type: int
+        required: true
+        label: Replicas
+      - variable: database.rootPassword
+        default: ""
+        type: string
+        required: true
+        label: Root password
+      - variable: database.appDatabase
+        default: ""
+        type: string
+        required: false
+        label: App database name
+      - variable: database.appUser
+        default: ""
+        type: string
+        required: false
+        label: App user name
+      - variable: database.appPassword
+        default: ""
+        type: string
+        required: false
+        label: App user password
+  - variable: mysql-operator.serviceMonitor.enabled
+    default: true
+    type: boolean
+    label: Create ServiceMonitor
+    group: Rancher Integration
+  - variable: rancher.createGrafanaDashboard
+    default: true
+    type: boolean
+    label: Create Grafana dashboard
+    group: Rancher Integration
+  - variable: rancher.createAlerts
+    default: true
+    type: boolean
+    label: Create Alerts
+    group: Rancher Integration

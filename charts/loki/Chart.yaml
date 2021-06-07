@@ -1,0 +1,19 @@
+apiVersion: v2
+name: loki
+type: application
+version: 2.5.2
+appVersion: v2.2.0
+description: "Loki: like Prometheus, but for logs."
+home: https://grafana.com/loki
+icon: https://raw.githubusercontent.com/grafana/loki/master/docs/sources/logo.png
+sources:
+  - https://github.com/grafana/loki
+maintainers:
+  - name: Grafana
+    email: lokiproject@googlegroups.com
+  - name: Rancher
+    url: https://github.com/rancher
+dependencies:
+  - name: loki
+    version: "2.x.x"
+    repository: https://grafana.github.io/helm-charts

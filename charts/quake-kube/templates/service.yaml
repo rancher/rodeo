@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "quake-kube.fullname" . }}
+  labels:
+    {{- include "quake-kube.labels" . | nindent 4 }}
+spec:
+  type: NodePort
+  selector:
+    {{- include "quake-kube.selectorLabels" . | nindent 6 }}
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30001
+      name: client
+    - port: 27960
+      targetPort: 27960
+      nodePort: 30003
+      name: server
+    - port: 9090
+      targetPort: 9090
+      nodePort: 30002
+      name: content

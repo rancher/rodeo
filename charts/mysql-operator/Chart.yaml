@@ -1,0 +1,22 @@
+apiVersion: v2
+name: mysql-operator
+description: MySQL Operator from Presslabs
+type: application
+version: 0.4.3
+appVersion: "0.4.0"
+icon: https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg
+keywords:
+  - mysql
+  - percona
+  - orchestrator
+  - presslabs
+home: https://github.com/presslabs/mysql-operator
+sources:
+  - https://github.com/presslabs/mysql-operator.git
+maintainers:
+  - name: Rancher
+    url: https://github.com/rancher
+dependencies:
+  - name: mysql-operator
+    version: "0.x.x"
+    repository: https://presslabs.github.io/charts

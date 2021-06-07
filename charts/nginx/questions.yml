@@ -1,0 +1,40 @@
+questions:
+  - variable: ingress.enabled
+    default: true
+    type: boolean
+    label: Expose app using Layer 7 Load Balancer
+    show_subquestion_if: true
+    group: "Services and Load Balancing"
+    subquestions:
+      - variable: ingress.hosts.0.host
+        default: "sslip.io"
+        type: hostname
+        required: true
+        label: Hostname
+  - variable: autoscaling.enabled
+    default: false
+    type: boolean
+    label: Enable autoscaling
+    show_subquestion_if: true
+    group: "Autoscaling"
+    subquestions:
+      - variable: autoscaling.minReplicas
+        default: 1
+        type: int
+        required: true
+        label: Min replicas
+      - variable: autoscaling.maxReplicas
+        default: 100
+        type: int
+        required: true
+        label: Max replicas
+      - variable: autoscaling.targetCPUUtilizationPercentage
+        default: "80"
+        type: string
+        required: false
+        label: Target CPU utilization percentage
+      - variable: autoscaling.targetMemoryUtilizationPercentage
+        default: ""
+        type: string
+        required: false
+        label: Target memory utilization percentage

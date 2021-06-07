@@ -1,0 +1,6 @@
+dependencies:
+- name: nfs-server-provisioner
+  repository: https://raphaelmonrouzeau.github.io/charts/repository/
+  version: 1.3.0
+digest: sha256:cc49c23b7ed77773d39a3805d40868ba7dff0b31b363637b5c4e5419d575a99a
+generated: "2021-06-07T12:57:21.260754+02:00"

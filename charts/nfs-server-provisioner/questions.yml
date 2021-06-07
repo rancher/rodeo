@@ -1,0 +1,6 @@
+questions:
+  - variable: nfs-server-provisioner.storageClass.defaultClass
+    default: true
+    type: boolean
+    label: Set StorageClass as default
+    group: "StorageClass"

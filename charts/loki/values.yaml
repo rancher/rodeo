@@ -1,0 +1,18 @@
+loki:
+  persistence:
+    enabled: false
+  serviceMonitor:
+    enabled: true
+  resources:
+    limits:
+      cpu: 200m
+      memory: 256Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+rancher:
+  createOutput: true
+  createFlow: true
+  addGrafanaDatasource: true
+  createGrafanaDashboard: true

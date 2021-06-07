@@ -1,0 +1,6 @@
+dependencies:
+- name: mysql-operator
+  repository: https://presslabs.github.io/charts
+  version: 0.4.0
+digest: sha256:7ff03a44958c628aa5f19b9f87fd7cf2ef718e5bf2b0de054e9e3e64f95e4d87
+generated: "2021-06-07T16:12:03.969168+02:00"
