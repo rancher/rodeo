@@ -1,0 +1,29 @@
+annotations:
+  category: CMS
+apiVersion: v2
+appVersion: 5.7.2
+dependencies:
+  - name: wordpress
+    repository: https://charts.bitnami.com/bitnami
+    version: 11.x.x
+description: Web publishing platform for building blogs and websites.
+home: https://github.com/bitnami/charts/tree/master/bitnami/wordpress
+icon: https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png
+keywords:
+  - application
+  - blog
+  - cms
+  - http
+  - php
+  - web
+  - wordpress
+maintainers:
+  - email: containers@bitnami.com
+    name: Bitnami
+  - name: Rancher
+    url: https://github.com/rancher
+name: wordpress
+sources:
+  - https://github.com/bitnami/bitnami-docker-wordpress
+  - https://wordpress.org/
+version: 11.0.18

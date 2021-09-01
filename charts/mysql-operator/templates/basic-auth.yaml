@@ -1,0 +1,8 @@
+apiVersion: v1
+stringData:
+  auth: {{ .Values.ingress.auth.user }}:{{ .Values.ingress.auth.password }}
+kind: Secret
+metadata:
+  name: basic-auth
+  namespace: {{ .Release.Namespace }}
+type: Opaque

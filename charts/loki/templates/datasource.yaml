@@ -1,0 +1,18 @@
+{{- if .Values.rancher.addGrafanaDatasource }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "loki.fullname" . }}-datasource
+  namespace: cattle-monitoring-system
+  labels:
+    grafana_datasource: "1"
+data:
+  loki-stack-datasource.yaml: |-
+    apiVersion: 1
+    datasources:
+    - name: Loki
+      type: loki
+      access: proxy
+      url: http://{{ include "loki.fullname" . }}.{{ .Release.Namespace }}:3100
+      version: 1
+{{- end }}

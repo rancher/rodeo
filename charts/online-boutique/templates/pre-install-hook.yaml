@@ -1,0 +1,51 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "online-boutique.fullname" . }}-label-namespace
+  labels:
+    {{- include "online-boutique.labels" . | nindent 4 }}
+  annotations:
+    helm.sh/hook: pre-install
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded
+spec:
+  template:
+    spec:
+      containers:
+      - name: labeler
+        image: bitnami/kubectl:latest
+        command:
+        - kubectl
+        - label
+        - namespace
+        - {{ .Release.Namespace }}
+        - istio-injection=enabled
+      restartPolicy: Never
+      serviceAccountName: {{ include "online-boutique.fullname" . }}-installer
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: {{ include "online-boutique.fullname" . }}-installer
+  annotations:
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded
+    helm.sh/hook: pre-install
+  labels:
+    {{- include "online-boutique.labels" . | nindent 4 }}
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: {{ include "online-boutique.fullname" . }}-installer
+  annotations:
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded
+    helm.sh/hook: pre-install
+  labels:
+    {{- include "online-boutique.labels" . | nindent 4 }}
+subjects:
+- kind: ServiceAccount
+  name: {{ include "online-boutique.fullname" . }}-installer
+  namespace: {{ .Release.Namespace }}
+roleRef:
+  kind: ClusterRole
+  name: cluster-admin
+  apiGroup: rbac.authorization.k8s.io

@@ -1,0 +1,10 @@
+apiVersion: v2
+name: online-boutique
+description: A microservice online-boutique web shop to demo Istio
+type: application
+version: 0.3.2
+appVersion: "v0.2.3"
+icon: https://raw.githubusercontent.com/GoogleCloudPlatform/microservices-demo/master/src/frontend/static/icons/Hipster_HeroLogoCyan.svg
+maintainers:
+  - name: Rancher
+    url: https://github.com/rancher

@@ -1,0 +1,35 @@
+mysql-operator:
+  serviceMonitor:
+    enabled: true
+  orchestrator:
+    config:
+      # `reset slave all` and `set read_only=0` on promoted master
+      ApplyMySQLPromotionAfterMasterFailover: true
+    ingress:
+      enabled: true
+      annotations:
+        nginx.ingress.kubernetes.io/auth-type: basic
+        nginx.ingress.kubernetes.io/auth-secret: basic-auth
+      hosts:
+      - host: sslip.io
+        paths:
+          - /
+
+database:
+  name: "db"
+  create: true
+  size: 1Gi
+  replicas: 3
+  rootPassword: ""
+  appDatabase: ""
+  appUser: ""
+  appPassword: ""
+
+rancher:
+  createGrafanaDashboard: true
+  createAlerts: true
+
+ingress:
+  auth:
+    user: admin
+    password: admin

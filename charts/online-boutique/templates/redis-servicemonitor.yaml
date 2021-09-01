@@ -1,0 +1,18 @@
+{{- if .Values.monitoring.enabled }}
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: redis-cart
+spec:
+  endpoints:
+    - interval: 30s
+      scrapeTimeout: 20s
+      path: "/metrics"
+      targetPort: metrics
+  namespaceSelector:
+    matchNames:
+      - {{ .Release.Namespace }}
+  selector:
+    matchLabels:
+      app: redis-cart
+{{- end }}

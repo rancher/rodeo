@@ -1,0 +1,10 @@
+{{- if .Values.rancher.createFlow }}
+apiVersion: logging.banzaicloud.io/v1beta1
+kind: ClusterFlow
+metadata:
+  name: all-logs-to-{{ include "loki.fullname" . }}
+  namespace: cattle-logging-system
+spec:
+  globalOutputRefs:
+    - {{ include "loki.fullname" . }}
+{{- end }}

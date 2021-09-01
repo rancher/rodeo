@@ -1,0 +1,11 @@
+{{- if .Values.rancher.createOutput }}
+apiVersion: logging.banzaicloud.io/v1beta1
+kind: ClusterOutput
+metadata:
+  name: {{ include "loki.fullname" . }}
+  namespace: cattle-logging-system
+spec:
+  loki:
+    url: http://{{ include "loki.fullname" . }}.{{ .Release.Namespace }}:3100
+    configure_kubernetes_labels: true
+{{- end }}

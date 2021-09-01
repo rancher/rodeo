@@ -1,0 +1,50 @@
+questions:
+  - variable: loki.serviceMonitor.enabled
+    default: true
+    type: boolean
+    label: Create ServiceMonitor
+    group: Rancher Integration
+  - variable: rancher.createOutput
+    default: true
+    type: boolean
+    label: Create Logging Output
+    group: Rancher Integration
+  - variable: rancher.createFlow
+    default: true
+    type: boolean
+    label: Create Logging Flow
+    group: Rancher Integration
+  - variable: rancher.addGrafanaDatasource
+    default: true
+    type: boolean
+    label: Add Grafana datasource
+    group: Rancher Integration
+  - variable: rancher.createGrafanaDashboard
+    default: true
+    type: boolean
+    label: Create Grafana dashboard
+    group: Rancher Integration
+  - variable: loki.persistence.enabled
+    default: false
+    description: "Enable persistent volume for Loki"
+    type: boolean
+    required: true
+    label: Loki Persistent Volume Enabled
+    show_subquestion_if: true
+    group: "Storage Settings"
+    subquestions:
+    - variable: loki.persistence.size
+      default: "10Gi"
+      description: "Loki Persistent Volume Size"
+      type: string
+      label: Loki Volume Size
+    - variable: loki.persistence.storageClass
+      default: ""
+      description: "If undefined or null, uses the default StorageClass. Default to null"
+      type: storageclass
+      label: Default StorageClass for Loki
+    - variable: loki.persistence.existingClaim
+      default: ""
+      description: "If not empty, uses the specified existing PVC instead of creating new one"
+      type: pvc
+      label: Existing Persistent Volume Claim for Loki

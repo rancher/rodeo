@@ -1,0 +1,13 @@
+wordpress:
+  service:
+    type: ClusterIP
+
+  ingress:
+    enabled: true
+    hostname: sslip.io
+    annotations:
+      # https://github.com/bitnami/charts/issues/2111
+      nginx.ingress.kubernetes.io/configuration-snippet: |
+        location ~ /wp-admin$ {
+             return 301 /wp-admin/;
+         }

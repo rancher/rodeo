@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "quake-kube.fullname" . }}
+  labels:
+    {{- include "quake-kube.labels" . | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "quake-kube.selectorLabels" . | nindent 6 }}
+  replicas: 1
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "quake-kube.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      containers:
+      - command:
+        - q3
+        - server
+        - --config=/config/config.yaml
+        - --content-server=http://127.0.0.1:9090
+        - --agree-eula
+        image: "criticalstack/quake:{{ .Values.image.tag | default .Chart.AppVersion }}"
+        name: server
+        ports:
+        - containerPort: 8080
+        readinessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 5
+        volumeMounts:
+        - name: quake3-server-config
+          mountPath: /config
+        - name: quake3-content
+          mountPath: /assets
+      - command:
+        - q3
+        - content
+        - --seed-content-url=http://content.quakejs.com
+        image: "criticalstack/quake:{{ .Values.image.tag | default .Chart.AppVersion }}"
+        name: content-server
+        ports:
+        - containerPort: 9090
+        volumeMounts:
+        - name: quake3-content
+          mountPath: /assets
+      volumes:
+        - name: quake3-server-config
+          configMap:
+            name: {{ include "quake-kube.fullname" . }}-server-config
+        - name: quake3-content
+          emptyDir: {}

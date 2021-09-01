@@ -1,0 +1,55 @@
+{{- if .Values.rancher.addGrafanaDatasource }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "loki.fullname" . }}-restart-grafana
+  labels:
+    {{- include "loki.labels" . | nindent 4 }}
+  annotations:
+    helm.sh/hook: post-install
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded
+spec:
+  template:
+    spec:
+      containers:
+      - name: labeler
+        image: bitnami/kubectl:latest
+        command:
+        - kubectl
+        - rollout
+        - restart
+        - deployment
+        - -n
+        - cattle-monitoring-system
+        - rancher-monitoring-grafana
+      restartPolicy: Never
+      serviceAccountName: {{ include "loki.fullname" . }}-installer
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: {{ include "loki.fullname" . }}-installer
+  annotations:
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded
+    helm.sh/hook: post-install
+  labels:
+    {{- include "loki.labels" . | nindent 4 }}
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: {{ include "loki.fullname" . }}-installer
+  annotations:
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded
+    helm.sh/hook: post-install
+  labels:
+    {{- include "loki.labels" . | nindent 4 }}
+subjects:
+- kind: ServiceAccount
+  name: {{ include "loki.fullname" . }}-installer
+  namespace: {{ .Release.Namespace }}
+roleRef:
+  kind: ClusterRole
+  name: cluster-admin
+  apiGroup: rbac.authorization.k8s.io
+{{- end }}

@@ -1,0 +1,23 @@
+questions:
+  - variable: ingress.enabled
+    default: true
+    type: boolean
+    label: Expose app using Layer 7 Load Balancer
+    show_subquestion_if: true
+    group: "Services and Load Balancing"
+    subquestions:
+      - variable: ingress.host
+        default: "sslip.io"
+        type: hostname
+        required: true
+        label: Hostname
+  - variable: loadGenerator.enabled
+    default: true
+    type: boolean
+    label: Deploy load generator
+    group: Features
+  - variable: monitoring.enabled
+    default: true
+    type: boolean
+    label: Configure Monitoring
+    group: Features
