@@ -1,0 +1,194 @@
+apiVersion: v1
+entries:
+  bookinfo:
+  - apiVersion: v2
+    appVersion: 1.16.2
+    created: "2021-09-01T09:58:12.506150442Z"
+    description: Istio bookinfo app
+    digest: 3201460cefa59b661db348374650687139e1121d321eeb06c1eed3a88f484d4f
+    icon: https://upload.wikimedia.org/wikipedia/commons/a/a1/Istio-bluelogo-nobackground-unframed.svg
+    maintainers:
+    - name: Rancher
+      url: https://github.com/rancher
+    name: bookinfo
+    type: application
+    urls:
+    - https://github.com/rancher/rodeo/releases/download/bookinfo-0.2.3/bookinfo-0.2.3.tgz
+    version: 0.2.3
+  loki:
+  - apiVersion: v2
+    appVersion: v2.2.0
+    created: "2021-09-01T09:58:12.69812378Z"
+    dependencies:
+    - name: loki
+      repository: https://grafana.github.io/helm-charts
+      version: 2.x.x
+    description: 'Loki: like Prometheus, but for logs.'
+    digest: 9c9dd39512309ea75406d9a9f3aee4fb82e614544476e927b6359ea45a5af880
+    home: https://grafana.com/loki
+    icon: https://raw.githubusercontent.com/grafana/loki/master/docs/sources/logo.png
+    maintainers:
+    - email: lokiproject@googlegroups.com
+      name: Grafana
+    - name: Rancher
+      url: https://github.com/rancher
+    name: loki
+    sources:
+    - https://github.com/grafana/loki
+    type: application
+    urls:
+    - https://github.com/rancher/rodeo/releases/download/loki-2.5.4/loki-2.5.4.tgz
+    version: 2.5.4
+  mysql-operator:
+  - apiVersion: v2
+    appVersion: 0.4.0
+    created: "2021-09-01T09:58:12.913676593Z"
+    dependencies:
+    - name: mysql-operator
+      repository: https://presslabs.github.io/charts
+      version: 0.x.x
+    description: MySQL Operator from Presslabs
+    digest: 7287d2dff740b0aa038abd02af8b9a62a189ff22e769293b7a4623382874511d
+    home: https://github.com/presslabs/mysql-operator
+    icon: https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg
+    keywords:
+    - mysql
+    - percona
+    - orchestrator
+    - presslabs
+    maintainers:
+    - name: Rancher
+      url: https://github.com/rancher
+    name: mysql-operator
+    sources:
+    - https://github.com/presslabs/mysql-operator.git
+    type: application
+    urls:
+    - https://github.com/rancher/rodeo/releases/download/mysql-operator-0.4.5/mysql-operator-0.4.5.tgz
+    version: 0.4.5
+  nfs-server-provisioner:
+  - apiVersion: v2
+    appVersion: 2.3.0
+    created: "2021-09-01T09:58:13.11418853Z"
+    dependencies:
+    - name: nfs-server-provisioner
+      repository: https://raphaelmonrouzeau.github.io/charts/repository/
+      version: 1.x.x
+    description: nfs-server-provisioner is an out-of-tree dynamic provisioner for
+      Kubernetes. You can use it to quickly & easily deploy shared storage that works
+      almost anywhere.
+    digest: c2adbc9e166a3414078a86179caeb0d41c4da07337754291aedd6608a4b33efa
+    home: https://github.com/kubernetes-sigs/nfs-ganesha-server-and-external-provisioner
+    keywords:
+    - nfs
+    - storage
+    maintainers:
+    - email: kiall@macinnes.ie
+      name: kiall
+    - email: kvapss@gmail.com
+      name: kvaps
+    - email: joaocc-dev@live.com
+      name: joaocc
+    - name: Rancher
+      url: https://github.com/rancher
+    name: nfs-server-provisioner
+    sources:
+    - https://github.com/kubernetes-sigs/nfs-ganesha-server-and-external-provisioner/tree/master/deploy/helm
+    type: application
+    urls:
+    - https://github.com/rancher/rodeo/releases/download/nfs-server-provisioner-1.2.5/nfs-server-provisioner-1.2.5.tgz
+    version: 1.2.5
+  nginx:
+  - apiVersion: v2
+    appVersion: 1.21.0
+    created: "2021-09-01T09:58:13.310532818Z"
+    description: A plain nginx
+    digest: 22723807914e95dc7690969d6c7cc5c874d939e38ae234e06dabfc4281327b69
+    icon: https://upload.wikimedia.org/wikipedia/commons/c/c5/Nginx_logo.svg
+    maintainers:
+    - name: Rancher
+      url: https://github.com/rancher
+    name: nginx
+    type: application
+    urls:
+    - https://github.com/rancher/rodeo/releases/download/nginx-0.2.4/nginx-0.2.4.tgz
+    version: 0.2.4
+  online-boutique:
+  - apiVersion: v2
+    appVersion: v0.2.3
+    created: "2021-09-01T09:58:13.53634135Z"
+    description: A microservice online-boutique web shop to demo Istio
+    digest: 5af6529dfe654fbf855f45315b76cf615a101dd1de7242c499df2303c5020f7c
+    icon: https://raw.githubusercontent.com/GoogleCloudPlatform/microservices-demo/master/src/frontend/static/icons/Hipster_HeroLogoCyan.svg
+    maintainers:
+    - name: Rancher
+      url: https://github.com/rancher
+    name: online-boutique
+    type: application
+    urls:
+    - https://github.com/rancher/rodeo/releases/download/online-boutique-0.3.4/online-boutique-0.3.4.tgz
+    version: 0.3.4
+  quake-kube:
+  - apiVersion: v2
+    appVersion: v1.0.7
+    created: "2021-09-01T09:58:13.723912537Z"
+    description: Quake 3 Arena in a browser
+    digest: 752a52a88242f35973dd729469e0f5e44627082cce24ae49f1490bc773faff0e
+    icon: https://upload.wikimedia.org/wikipedia/de/7/78/Quake_III_Arena_Logo.svg
+    maintainers:
+    - name: Rancher
+      url: https://github.com/rancher
+    name: quake-kube
+    type: application
+    urls:
+    - https://github.com/rancher/rodeo/releases/download/quake-kube-0.2.3/quake-kube-0.2.3.tgz
+    version: 0.2.3
+  rancher-demo:
+  - apiVersion: v2
+    appVersion: 1.0.6
+    created: "2021-09-01T09:58:13.912482535Z"
+    description: Rancher demo application, web UI showing scale of containers
+    digest: 3e3e25cc31829cab13ab30f8e1bb37b8a65d8565cab58041a81436a99682e3a4
+    icon: https://rancher.com/img/brand-guidelines/assets/logos/png/color/rancher-logo-stacked-color.png
+    maintainers:
+    - name: Rancher
+      url: https://github.com/rancher
+    name: rancher-demo
+    urls:
+    - https://github.com/rancher/rodeo/releases/download/rancher-demo-2.1.4/rancher-demo-2.1.4.tgz
+    version: 2.1.4
+  wordpress:
+  - annotations:
+      category: CMS
+    apiVersion: v2
+    appVersion: 5.7.3
+    created: "2021-09-01T09:58:14.11709672Z"
+    dependencies:
+    - name: wordpress
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    description: Web publishing platform for building blogs and websites.
+    digest: cbd736c57f9b59301580c7b5c7f3e29b336b452731b34659645ec1987411fe93
+    home: https://github.com/bitnami/charts/tree/master/bitnami/wordpress
+    icon: https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png
+    keywords:
+    - application
+    - blog
+    - cms
+    - http
+    - php
+    - web
+    - wordpress
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    - name: Rancher
+      url: https://github.com/rancher
+    name: wordpress
+    sources:
+    - https://github.com/bitnami/bitnami-docker-wordpress
+    - https://wordpress.org/
+    urls:
+    - https://github.com/rancher/rodeo/releases/download/wordpress-11.0.19/wordpress-11.0.19.tgz
+    version: 11.0.19
+generated: "2021-09-01T09:58:14.117168521Z"
