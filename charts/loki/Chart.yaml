@@ -1,7 +1,7 @@
 apiVersion: v2
 name: loki
 type: application
-version: 2.5.3
+version: 2.5.4
 appVersion: v2.2.0
 description: "Loki: like Prometheus, but for logs."
 home: https://grafana.com/loki

@@ -2,7 +2,7 @@ apiVersion: v2
 name: nginx
 description: A plain nginx
 type: application
-version: 0.2.3
+version: 0.2.4
 appVersion: "1.21.0"
 icon: https://upload.wikimedia.org/wikipedia/commons/c/c5/Nginx_logo.svg
 maintainers:

@@ -2,7 +2,7 @@ apiVersion: v2
 name: bookinfo
 description: Istio bookinfo app
 type: application
-version: 0.2.2
+version: 0.2.3
 appVersion: "1.16.2"
 icon: https://upload.wikimedia.org/wikipedia/commons/a/a1/Istio-bluelogo-nobackground-unframed.svg
 maintainers:

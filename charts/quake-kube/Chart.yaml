@@ -2,7 +2,7 @@ apiVersion: v2
 name: quake-kube
 description: Quake 3 Arena in a browser
 type: application
-version: 0.2.2
+version: 0.2.3
 appVersion: "v1.0.7"
 icon: https://upload.wikimedia.org/wikipedia/de/7/78/Quake_III_Arena_Logo.svg
 maintainers:
