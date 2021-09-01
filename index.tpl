@@ -87,7 +87,7 @@
         {{ if not (index $chartEntry 0).Deprecated }}
           <div class="chart">
             <div class="icon">
-              <img class="chart-item-logo" alt="{{ $key }}'s logo" src="{{ if (index $chartEntry 0).Icon }}{{ (index $chartEntry 0).Icon }}{{ else }}_images/placeholder.png{{end}}">
+              <img class="chart-item-logo" alt="{{ $key }}'s logo" src="{{ if (index $chartEntry 0).Icon }}{{ (index $chartEntry 0).Icon }}{{ else }}placeholder.png{{end}}">
             </div>
             <div class="body">
               <p class="info">
