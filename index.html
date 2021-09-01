@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rancher Rodeo Helm Charts</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css" />
+    <style>
+      .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        margin: 0 auto;
+        padding: 45px;
+      }
+    
+      @media (max-width: 767px) {
+        .markdown-body {
+          padding: 15px;
+        }
+      }
+
+      .charts {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .chart {
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid #d7d9dd;
+        transition: transform .2s ease;
+        background-color: #eaedef;
+        width: 300px;
+        margin: 0.5em;
+      }
+      
+      .chart .icon {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 110px;
+        background-color: #fff;
+        align-items: center;
+      }
+      .chart .icon img { 
+        max-height: 80%;
+      }
+      .chart .body {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        border-top: 1px solid #d7d9dd;
+        padding: 0 1em;
+        flex-direction: column;
+        word-wrap: break-word;
+        text-align: center;
+      }
+      .chart .body .info {
+        word-wrap: break-word;
+        text-align: center;
+      }
+      .chart .body .description {
+        text-align: left;
+      }
+    </style>
+    
+  </head>
+
+  <body>
+
+    <section class="markdown-body">
+      <h1>Rancher Rodeo Helm Charts</h1>
+
+      <h2>Usage</h2>
+
+      <pre class="snippet" lang="no-highlight"><code>helm repo add rodeo https://rancher.github.io/rodeo</code></pre>
+
+      <p>This repository contains Helm charts that are used during Rancher Rodeo webinars and for demonstration purposes.</p>
+
+      <p><b>The Helm charts in this repository are not production ready and are meant for demonstration purposes only!</b>
+
+      <h2>Charts</h2>
+
+      <div class="charts">
+			
+        
+          <div class="chart">
+            <div class="icon">
+              <img class="chart-item-logo" alt="bookinfo's logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Istio-bluelogo-nobackground-unframed.svg">
+            </div>
+            <div class="body">
+              <p class="info">
+                <a href="https://github.com/rancher/rodeo/releases/download/bookinfo-0.2.3/bookinfo-0.2.3.tgz" title="https://github.com/rancher/rodeo/releases/download/bookinfo-0.2.3/bookinfo-0.2.3.tgz">
+                  bookinfo
+                  (0.2.3@1.16.2)
+                </a>
+              </p>
+              <p class="description">
+                Istio bookinfo app
+              </p>
+            </div>
+          </div>
+        
+			
+        
+          <div class="chart">
+            <div class="icon">
+              <img class="chart-item-logo" alt="loki's logo" src="https://raw.githubusercontent.com/grafana/loki/master/docs/sources/logo.png">
+            </div>
+            <div class="body">
+              <p class="info">
+                <a href="https://github.com/rancher/rodeo/releases/download/loki-2.5.4/loki-2.5.4.tgz" title="https://github.com/rancher/rodeo/releases/download/loki-2.5.4/loki-2.5.4.tgz">
+                  loki
+                  (2.5.4@v2.2.0)
+                </a>
+              </p>
+              <p class="description">
+                Loki: like Prometheus, but for logs.
+              </p>
+            </div>
+          </div>
+        
+			
+        
+          <div class="chart">
+            <div class="icon">
+              <img class="chart-item-logo" alt="mysql-operator's logo" src="https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg">
+            </div>
+            <div class="body">
+              <p class="info">
+                <a href="https://github.com/rancher/rodeo/releases/download/mysql-operator-0.4.5/mysql-operator-0.4.5.tgz" title="https://github.com/rancher/rodeo/releases/download/mysql-operator-0.4.5/mysql-operator-0.4.5.tgz">
+                  mysql-operator
+                  (0.4.5@0.4.0)
+                </a>
+              </p>
+              <p class="description">
+                MySQL Operator from Presslabs
+              </p>
+            </div>
+          </div>
+        
+			
+        
+          <div class="chart">
+            <div class="icon">
+              <img class="chart-item-logo" alt="nfs-server-provisioner's logo" src="_images/placeholder.png">
+            </div>
+            <div class="body">
+              <p class="info">
+                <a href="https://github.com/rancher/rodeo/releases/download/nfs-server-provisioner-1.2.5/nfs-server-provisioner-1.2.5.tgz" title="https://github.com/rancher/rodeo/releases/download/nfs-server-provisioner-1.2.5/nfs-server-provisioner-1.2.5.tgz">
+                  nfs-server-provisioner
+                  (1.2.5@2.3.0)
+                </a>
+              </p>
+              <p class="description">
+                nfs-server-provisioner is an out-of-tree dynamic provisioner for Kubernetes. You can use it to quickly &amp; easily deploy shared storage that works almost anywhere.
+              </p>
+            </div>
+          </div>
+        
+			
+        
+          <div class="chart">
+            <div class="icon">
+              <img class="chart-item-logo" alt="nginx's logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Nginx_logo.svg">
+            </div>
+            <div class="body">
+              <p class="info">
+                <a href="https://github.com/rancher/rodeo/releases/download/nginx-0.2.4/nginx-0.2.4.tgz" title="https://github.com/rancher/rodeo/releases/download/nginx-0.2.4/nginx-0.2.4.tgz">
+                  nginx
+                  (0.2.4@1.21.0)
+                </a>
+              </p>
+              <p class="description">
+                A plain nginx
+              </p>
+            </div>
+          </div>
+        
+			
+        
+          <div class="chart">
+            <div class="icon">
+              <img class="chart-item-logo" alt="online-boutique's logo" src="https://raw.githubusercontent.com/GoogleCloudPlatform/microservices-demo/master/src/frontend/static/icons/Hipster_HeroLogoCyan.svg">
+            </div>
+            <div class="body">
+              <p class="info">
+                <a href="https://github.com/rancher/rodeo/releases/download/online-boutique-0.3.4/online-boutique-0.3.4.tgz" title="https://github.com/rancher/rodeo/releases/download/online-boutique-0.3.4/online-boutique-0.3.4.tgz">
+                  online-boutique
+                  (0.3.4@v0.2.3)
+                </a>
+              </p>
+              <p class="description">
+                A microservice online-boutique web shop to demo Istio
+              </p>
+            </div>
+          </div>
+        
+			
+        
+          <div class="chart">
+            <div class="icon">
+              <img class="chart-item-logo" alt="quake-kube's logo" src="https://upload.wikimedia.org/wikipedia/de/7/78/Quake_III_Arena_Logo.svg">
+            </div>
+            <div class="body">
+              <p class="info">
+                <a href="https://github.com/rancher/rodeo/releases/download/quake-kube-0.2.3/quake-kube-0.2.3.tgz" title="https://github.com/rancher/rodeo/releases/download/quake-kube-0.2.3/quake-kube-0.2.3.tgz">
+                  quake-kube
+                  (0.2.3@v1.0.7)
+                </a>
+              </p>
+              <p class="description">
+                Quake 3 Arena in a browser
+              </p>
+            </div>
+          </div>
+        
+			
+        
+          <div class="chart">
+            <div class="icon">
+              <img class="chart-item-logo" alt="rancher-demo's logo" src="https://rancher.com/img/brand-guidelines/assets/logos/png/color/rancher-logo-stacked-color.png">
+            </div>
+            <div class="body">
+              <p class="info">
+                <a href="https://github.com/rancher/rodeo/releases/download/rancher-demo-2.1.4/rancher-demo-2.1.4.tgz" title="https://github.com/rancher/rodeo/releases/download/rancher-demo-2.1.4/rancher-demo-2.1.4.tgz">
+                  rancher-demo
+                  (2.1.4@1.0.6)
+                </a>
+              </p>
+              <p class="description">
+                Rancher demo application, web UI showing scale of containers
+              </p>
+            </div>
+          </div>
+        
+			
+        
+          <div class="chart">
+            <div class="icon">
+              <img class="chart-item-logo" alt="wordpress's logo" src="https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png">
+            </div>
+            <div class="body">
+              <p class="info">
+                <a href="https://github.com/rancher/rodeo/releases/download/wordpress-11.0.19/wordpress-11.0.19.tgz" title="https://github.com/rancher/rodeo/releases/download/wordpress-11.0.19/wordpress-11.0.19.tgz">
+                  wordpress
+                  (11.0.19@5.7.3)
+                </a>
+              </p>
+              <p class="description">
+                Web publishing platform for building blogs and websites.
+              </p>
+            </div>
+          </div>
+        
+			
+      </div>
+    </section>
+		<time datetime="2021-09-01T09:58:14" pubdate id="generated">Wed Sep 1 2021 09:58:14AM UTC&#43;00:00</time>
+  </body>
+</html>
