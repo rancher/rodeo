@@ -17,6 +17,16 @@ questions:
     type: string
     label: SA Password
     group: "DB Settings"
+  - variable: service.type
+    default: "ClusterIP"
+    description: "Kubernetes Service Type"
+    type: enum
+    options:
+      - "ClusterIP"
+      - "NodePort"
+      - "LoadBalancer"
+    label: Kubernetes Service Type
+    group: "Service Settings"
   - variable: ACCEPT_EULA.value
     default: "y"
     description: "Accept EULA"
