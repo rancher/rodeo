@@ -39,6 +39,20 @@ entries:
     urls:
     - https://github.com/rancher/rodeo/releases/download/loki-2.5.4/loki-2.5.4.tgz
     version: 2.5.4
+  mssql:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-09-30T11:03:21.053282376Z"
+    description: Installs Microsoft SQL Server in Docker
+    digest: 3a4e73b33646291daf7a02645feb4e14f0d97e9306407a0825e58938c3ee40f0
+    icon: https://upload.wikimedia.org/wikipedia/de/8/8c/Microsoft_SQL_Server_Logo.svg
+    name: mssql
+    sources:
+    - https://github.com/microsoft/mssql-docker
+    type: application
+    urls:
+    - https://github.com/rancher/rodeo/releases/download/mssql-0.1.0/mssql-0.1.0.tgz
+    version: 0.1.0
   mysql-operator:
   - apiVersion: v2
     appVersion: 0.4.0
@@ -191,4 +205,4 @@ entries:
     urls:
     - https://github.com/rancher/rodeo/releases/download/wordpress-11.0.19/wordpress-11.0.19.tgz
     version: 11.0.19
-generated: "2021-09-01T09:58:14.117168521Z"
+generated: "2021-09-30T11:03:21.053528178Z"
