@@ -1,0 +1,49 @@
+{{- if .Values.pvc.enabled }}
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ include "mssql-latest.fullname" . }}-data
+spec:
+  storageClassName: {{ .Values.pvc.storageClassName }}
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.pvc.mssqldbsize}}
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ include "mssql-latest.fullname" . }}-userdb
+spec:
+  storageClassName: {{ .Values.pvc.storageClassName }}
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.pvc.userdbsize}}
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ include "mssql-latest.fullname" . }}-log
+spec:
+  storageClassName: {{ .Values.pvc.storageClassName }}
+  accessModes:
+   - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.pvc.userlogsize}}
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ include "mssql-latest.fullname" . }}-temp
+spec:
+  storageClassName: {{ .Values.pvc.storageClassName }}
+  accessModes:
+   - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.pvc.tempsize}}
+{{- end }}

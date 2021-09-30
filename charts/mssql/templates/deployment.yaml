@@ -1,0 +1,83 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "mssql-latest.fullname" . }}
+  labels:
+    {{- include "mssql-latest.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicas}}
+  selector:
+    matchLabels:
+      {{- include "mssql-latest.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "mssql-latest.selectorLabels" . | nindent 8 }}
+    spec:
+      hostname: {{ .Values.hostname}}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          command:
+            - /bin/bash
+            - -c
+            - cp /var/opt/config/mssql.conf /var/opt/mssql/mssql.conf && /opt/mssql/bin/sqlservr
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.containers.ports.containerPort}}
+          env:
+           - name: MSSQL_PID
+             value: "{{ .Values.MSSQL_PID.value}}"
+           - name: ACCEPT_EULA
+             value: "{{ .Values.ACCEPT_EULA.value | upper}}"
+           - name: MSSQL_AGENT_ENABLED
+             value: "{{ .Values.MSSQL_AGENT_ENABLED.value}}"
+           - name: SA_PASSWORD
+             valueFrom:
+              secretKeyRef:
+               name: {{ include "mssql-latest.fullname" . }}-secret
+               key: {{  template "mssql.sapassword" . }}
+          volumeMounts:
+           - name: mssqldb
+             mountPath: /var/opt/mssql
+           - name: mssqluserdb
+             mountPath: /var/opt/mssql/userdata
+           - name: mssqllog
+             mountPath: /var/opt/mssql/userlog
+           - name: mssqltemp
+             mountPath: /var/opt/mssql/tempdb
+           - name: mssql-config-volume
+             mountPath: /var/opt/config
+      volumes:
+{{- if .Values.pvc.enabled }}
+       - name: mssqldb
+         persistentVolumeClaim:
+          claimName: {{ include "mssql-latest.fullname" . }}-data
+       - name: mssqluserdb
+         persistentVolumeClaim:
+          claimName: {{ include "mssql-latest.fullname" . }}-userdb
+       - name: mssqllog
+         persistentVolumeClaim:
+          claimName: {{ include "mssql-latest.fullname" . }}-log
+       - name: mssqltemp
+         persistentVolumeClaim:
+          claimName: {{ include "mssql-latest.fullname" . }}-temp
+{{- else }}
+       - name: mssqldb
+         emptyDir: {}
+       - name: mssqluserdb
+         emptyDir: {}
+       - name: mssqllog
+         emptyDir: {}
+       - name: mssqltemp
+         emptyDir: {}
+{{- end }}
+       - name: mssql-config-volume
+         configMap:
+          name: {{ include "mssql-latest.fullname" . }}-config

@@ -1,0 +1,65 @@
+questions:
+  - variable: image.tag
+    default: "2019-latest"
+    description: "Version"
+    type: string
+    label: Version
+    group: "DB Settings"
+  - variable: hostname
+    default: "mssqllatest"
+    description: "Hostname"
+    type: string
+    label: Hostname
+    group: "DB Settings"
+  - variable: sa_password
+    default: "changeme"
+    description: "SA Password"
+    type: string
+    label: SA Password
+    group: "DB Settings"
+  - variable: ACCEPT_EULA.value
+    default: "y"
+    description: "Accept EULA"
+    type: string
+    label: Accept EULA
+    group: "Licensing"
+  - variable: MSSQL_PID.value
+    default: "Developer"
+    description: "MS SQL Product ID"
+    type: string
+    label: MS SQL Product ID
+    group: "Licensing"
+  - variable: pvc.enabled
+    default: false
+    description: "Enable persistent volume"
+    type: boolean
+    required: true
+    label: Persistent Volume Enabled
+    show_subquestion_if: true
+    group: "Storage Settings"
+    subquestions:
+    - variable: pvc.userdbsize
+      default: "5Gi"
+      description: "User DB Volume Size"
+      type: string
+      label: User DB Volume Size
+    - variable: pvc.userlogsize
+      default: "5Gi"
+      description: "User Log Volume Size"
+      type: string
+      label: User Log Volume Size
+    - variable: pvc.tempsize
+      default: "2Gi"
+      description: "Temp Volume Size"
+      type: string
+      label: Temp Volume Size
+    - variable: pvc.mssqldbsize
+      default: "2Gi"
+      description: "MSSQL DB Volume Size"
+      type: string
+      label: MSSQL DB Volume Size
+    - variable: pvc.storageClassName
+      default: ""
+      description: "If undefined or null, uses the default StorageClass. Default to null"
+      type: storageclass
+      label: Default StorageClass
