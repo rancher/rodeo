@@ -142,6 +142,20 @@ entries:
     version: 0.2.4
   online-boutique:
   - apiVersion: v2
+    appVersion: v0.3.5
+    created: "2022-01-11T15:49:41.911712606Z"
+    description: A microservice online-boutique web shop to demo Istio
+    digest: f36c93ecde430d95ebc9f252ca4cc204f55e8fe385b46d454507b97d7cf5b7c2
+    icon: https://raw.githubusercontent.com/GoogleCloudPlatform/microservices-demo/master/src/frontend/static/icons/Hipster_HeroLogoCyan.svg
+    maintainers:
+    - name: Rancher
+      url: https://github.com/rancher
+    name: online-boutique
+    type: application
+    urls:
+    - https://github.com/rancher/rodeo/releases/download/online-boutique-0.3.6/online-boutique-0.3.6.tgz
+    version: 0.3.6
+  - apiVersion: v2
     appVersion: v0.3.4
     created: "2022-01-10T15:39:56.860258283Z"
     description: A microservice online-boutique web shop to demo Istio
@@ -265,4 +279,4 @@ entries:
     urls:
     - https://github.com/rancher/rodeo/releases/download/wordpress-11.0.19/wordpress-11.0.19.tgz
     version: 11.0.19
-generated: "2022-01-10T15:39:56.860281183Z"
+generated: "2022-01-11T15:49:41.911729906Z"
