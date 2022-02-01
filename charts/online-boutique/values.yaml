@@ -1,6 +1,10 @@
 image:
   tag: ""
 
+adservice:
+  image:
+    tag: v0.3.5
+
 ingress:
   enabled: true
   annotations: {}
