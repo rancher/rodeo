@@ -30,6 +30,7 @@ jobs:
           helm repo add presslabs https://presslabs.github.io/charts
           helm repo add raphaelmonrouzeau https://raphaelmonrouzeau.github.io/charts/repository/
           helm repo add bitnami https://charts.bitnami.com/bitnami
+          helm repo add bitpoke https://helm-charts.bitpoke.io
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.2.1
