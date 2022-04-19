@@ -31,7 +31,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: "gcr.io/google-samples/microservices-demo/adservice:{{ .Values.adservice.image.tag | default .Values.image.tag | default .Chart.AppVersion }}"
+        image: "gcr.io/google-samples/microservices-demo/adservice:{{ .Values.image.tag | default .Chart.AppVersion }}"
         ports:
         - containerPort: 9555
         env:
@@ -45,8 +45,10 @@ spec:
           value: "1"
         - name: DISABLE_DEBUGGER
           value: "1"
+{{- if .Values.jaeger.enabled }}
         - name: JAEGER_SERVICE_ADDR
-          value: "jaeger-collector.istio-system:14268"
+          value: {{ .Values.jaeger.collector }}
+{{- end }}
         resources:
           requests:
             cpu: 200m

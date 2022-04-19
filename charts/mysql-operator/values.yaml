@@ -2,9 +2,6 @@ mysql-operator:
   serviceMonitor:
     enabled: true
   orchestrator:
-    config:
-      # `reset slave all` and `set read_only=0` on promoted master
-      ApplyMySQLPromotionAfterMasterFailover: true
     ingress:
       enabled: true
       annotations:
@@ -13,7 +10,8 @@ mysql-operator:
       hosts:
       - host: sslip.io
         paths:
-          - /
+          - path: /
+            pathType: ImplementationSpecific
 
 database:
   name: "db"

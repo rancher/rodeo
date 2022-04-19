@@ -2,7 +2,7 @@ apiVersion: v2
 name: mssql
 description: Installs Microsoft SQL Server in Docker
 type: application
-version: 0.1.1
+version: 0.1.2
 appVersion: 1.16.0
 icon: https://upload.wikimedia.org/wikipedia/de/8/8c/Microsoft_SQL_Server_Logo.svg
 sources:

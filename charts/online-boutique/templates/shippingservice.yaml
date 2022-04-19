@@ -44,8 +44,10 @@ spec:
           value: "1"
         - name: DISABLE_DEBUGGER
           value: "1"
+{{- if .Values.jaeger.enabled }}
         - name: JAEGER_SERVICE_ADDR
-          value: "jaeger-collector.istio-system:14268"
+          value: {{ .Values.jaeger.collector }}
+{{- end }}
         readinessProbe:
           periodSeconds: 5
           exec:
