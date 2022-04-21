@@ -8,4 +8,8 @@ spec:
   loki:
     url: http://{{ include "loki.fullname" . }}.{{ .Release.Namespace }}:3100
     configure_kubernetes_labels: true
+    buffer:
+      timekey: 5s
+      timekey_wait: 2s
+      timekey_use_utc: true
 {{- end }}
