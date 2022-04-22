@@ -385,6 +385,18 @@ entries:
     urls:
     - https://github.com/rancher/rodeo/releases/download/rancher-demo-2.1.4/rancher-demo-2.1.4.tgz
     version: 2.1.4
+  tetris:
+  - apiVersion: v2
+    appVersion: 0.1.8
+    created: "2022-04-22T13:30:02.931472515Z"
+    description: An easy Tetris Clone running in your browser
+    digest: caa8ab126b79cdc747645eae1489551b55d1152d85fa8741318d188adba2c9ea
+    icon: https://upload.wikimedia.org/wikipedia/commons/9/9c/Typical_Tetris_Game.svg
+    name: tetris
+    type: application
+    urls:
+    - https://github.com/rancher/rodeo/releases/download/tetris-0.1.9/tetris-0.1.9.tgz
+    version: 0.1.9
   wordpress:
   - annotations:
       category: CMS
@@ -485,4 +497,4 @@ entries:
     urls:
     - https://github.com/rancher/rodeo/releases/download/wordpress-11.0.19/wordpress-11.0.19.tgz
     version: 11.0.19
-generated: "2022-04-21T12:59:48.756493321Z"
+generated: "2022-04-22T13:30:02.931510217Z"
