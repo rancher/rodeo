@@ -1,0 +1,7 @@
+apiVersion: v2
+appVersion: 0.1.8
+description: An easy Tetris Clone running in your browser
+name: tetris
+type: application
+version: 0.1.9
+icon: https://upload.wikimedia.org/wikipedia/commons/9/9c/Typical_Tetris_Game.svg

@@ -1,0 +1,53 @@
+questions:
+  - variable: title
+    type: string
+    label: Site title
+    group: "Application Settings"
+  - variable: autoplay
+    type: boolean
+    label: Start Tetris in autoplay mode
+    group: "Application Settings"
+  - variable: theme
+    type: enum
+    options:
+      - custom
+      - vim 
+      - candy
+      - modern
+      - retro
+      - monochrome
+      - gameboy
+    label: Theme of the blocks
+    group: "Application Settings"
+  - variable: ingress.enabled
+    type: boolean
+    label: Expose app using Layer 7 Load Balancer
+    show_subquestion_if: true
+    group: "Services and Load Balancing"
+    subquestions:
+      - variable: ingress.hosts.0.host
+        type: hostname
+        required: true
+        label: Hostname
+  - variable: autoscaling.enabled
+    type: boolean
+    label: Enable autoscaling
+    show_subquestion_if: true
+    group: "Autoscaling"
+    subquestions:
+      - variable: autoscaling.minReplicas
+        type: int
+        required: true
+        label: Min replicas
+      - variable: autoscaling.maxReplicas
+        type: int
+        required: true
+        label: Max replicas
+      - variable: autoscaling.targetCPUUtilizationPercentage
+        type: string
+        required: false
+        label: Target CPU utilization percentage
+      - variable: autoscaling.targetMemoryUtilizationPercentage
+        type: string
+        required: false
+        label: Target memory utilization percentage
