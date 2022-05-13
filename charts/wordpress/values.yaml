@@ -12,7 +12,13 @@ wordpress:
   ingress:
     enabled: true
     hostname: sslip.io
-
+  externalDatabase:
+    host: localhost
+    port: 3306
+    user: bn_wordpress
+    password: ""
+    database: bitnami_wordpress
+    existingSecret: ""
   mariadb:
     enabled: true
     auth:

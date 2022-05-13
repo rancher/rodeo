@@ -30,19 +30,19 @@ questions:
   show_subquestion_if: true
   group: "Database Settings"
   subquestions:
-  - variable: wordpress.mariadb.db.name
+  - variable: wordpress.mariadb.auth.database
     description: "Database name to create"
     type: string
     label: MariaDB Database
-  - variable: wordpress.mariadb.db.user
+  - variable: wordpress.mariadb.auth.username
     description: "Database user to create"
     type: string
     label: MariaDB User
-  - variable: wordpress.mariadb.db.password
+  - variable: wordpress.mariadb.auth.password
     description: "Password, will be auto-generated if not specified"
     type: password
     label: MariaDB Password
-  - variable: wordpress.mariadb.rootUser.password
+  - variable: wordpress.mariadb.auth.rootPassword
     description: "Root user password, will be auto-generated if not specified"
     type: password
     label: MariaDB Root Password
