@@ -1,7 +1,26 @@
 wordpress:
+  wordpressEmail: user@example.com
+  wordpressUsername: user
+  wordpressPassword: ""
   service:
     type: ClusterIP
+
+  persistence:
+    enabled: false
+    size: 10Gi
 
   ingress:
     enabled: true
     hostname: sslip.io
+
+  mariadb:
+    enabled: true
+    auth:
+      rootPassword: ""
+      database: bitnami_wordpress
+      username: bn_wordpress
+      password: ""
+    primary:
+      persistence:
+        enabled: false
+        size: 8Gi

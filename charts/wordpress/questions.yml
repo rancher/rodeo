@@ -5,25 +5,6 @@ categories:
 - Blog
 - CMS
 questions:
-- variable: defaultImage
-  label: Use Default Image
-  type: boolean
-  show_subquestion_if: false
-  group: "Container Images"
-  subquestions:
-  - variable: wordpress.image.repository
-    description: "WordPress image name"
-    type: string
-    label: WordPress Image Name
-  - variable: wordpress.image.tag
-    type: string
-    label: WordPress Image Tag
-  - variable: wordpress.mariadb.image.repository
-    type: string
-    label: MariaDB Image Name
-  - variable: wordpress.mariadb.image.tag
-    type: string
-    label: MariaDB Image Tag
 - variable: wordpress.wordpressUsername
   description: "User of the application"
   type: string
