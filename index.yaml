@@ -361,6 +361,19 @@ entries:
   rancher-demo:
   - apiVersion: v2
     appVersion: 1.0.6
+    created: "2022-06-17T07:52:24.382893166Z"
+    description: Rancher demo application, web UI showing scale of containers
+    digest: 3f1c8b57427a8e5e6c2b68fc75bf2d9ca1fe0316a44215f652bba89215ac9708
+    icon: https://rancher.com/img/brand-guidelines/assets/logos/png/color/rancher-logo-stacked-color.png
+    maintainers:
+    - name: Rancher
+      url: https://github.com/rancher
+    name: rancher-demo
+    urls:
+    - https://github.com/rancher/rodeo/releases/download/rancher-demo-2.1.7/rancher-demo-2.1.7.tgz
+    version: 2.1.7
+  - apiVersion: v2
+    appVersion: 1.0.6
     created: "2022-05-05T12:18:25.068940895Z"
     description: Rancher demo application, web UI showing scale of containers
     digest: 73cfa0304228b0f7308c98f56e55fb196cf6c14c9b393461a38d498a1c631cb2
@@ -576,4 +589,4 @@ entries:
     urls:
     - https://github.com/rancher/rodeo/releases/download/wordpress-11.0.19/wordpress-11.0.19.tgz
     version: 11.0.19
-generated: "2022-05-13T07:44:36.486778476Z"
+generated: "2022-06-17T07:52:24.382944067Z"
