@@ -1,7 +1,7 @@
 {{- if .Values.ingress.enabled -}}
 {{- $fullName := include "rancher-demo.fullname" . -}}
 {{- $ingressPaths := .Values.ingress.paths -}}
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: {{ $fullName }}
@@ -29,7 +29,11 @@ spec:
     - host: {{ .Values.ingress.host | quote }}
       http:
         paths:
-        - backend:
-            serviceName: {{ $fullName }}
-            servicePort: http
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: {{ $fullName }}
+              port:
+                name: http
 {{- end }}
