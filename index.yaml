@@ -18,6 +18,29 @@ entries:
   loki:
   - apiVersion: v2
     appVersion: v2.5.0
+    created: "2022-09-15T09:41:38.211012709Z"
+    dependencies:
+    - name: loki
+      repository: https://grafana.github.io/helm-charts
+      version: 2.x.x
+    description: 'Loki: like Prometheus, but for logs.'
+    digest: 7946acbf6b9bb4e9a83f0ea12efdb4b02cda29badf810d0c327623588f454249
+    home: https://grafana.com/loki
+    icon: https://raw.githubusercontent.com/grafana/loki/master/docs/sources/logo.png
+    maintainers:
+    - email: lokiproject@googlegroups.com
+      name: Grafana
+    - name: Rancher
+      url: https://github.com/rancher
+    name: loki
+    sources:
+    - https://github.com/grafana/loki
+    type: application
+    urls:
+    - https://github.com/rancher/rodeo/releases/download/loki-2.5.8/loki-2.5.8.tgz
+    version: 2.5.8
+  - apiVersion: v2
+    appVersion: v2.5.0
     created: "2022-04-21T12:59:48.75646282Z"
     dependencies:
     - name: loki
@@ -589,4 +612,4 @@ entries:
     urls:
     - https://github.com/rancher/rodeo/releases/download/wordpress-11.0.19/wordpress-11.0.19.tgz
     version: 11.0.19
-generated: "2022-06-17T07:52:24.382944067Z"
+generated: "2022-09-15T09:41:38.211142013Z"
