@@ -31,7 +31,7 @@ questions:
       description: "Loki Persistent Volume Size"
       type: string
       label: Loki Volume Size
-    - variable: loki.persistence.storageClass
+    - variable: loki.persistence.storageClassName
       description: "If undefined or null, uses the default StorageClass. Default to null"
       type: storageclass
       label: Default StorageClass for Loki

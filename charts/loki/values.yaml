@@ -1,6 +1,9 @@
 loki:
   persistence:
     enabled: false
+    size: 10Gi
+    existingClaim: ""
+    storageClassName: ""
   serviceMonitor:
     enabled: true
   resources:
