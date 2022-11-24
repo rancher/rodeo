@@ -12,6 +12,7 @@ wordpress:
   ingress:
     enabled: true
     hostname: sslip.io
+    ingressClassName: nginx
   externalDatabase:
     host: localhost
     port: 3306

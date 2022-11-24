@@ -125,6 +125,11 @@ questions:
     type: hostname
     required: true
     label: Hostname
+  - variable: wordpress.ingress.ingressClassName
+    description: "Ingress Class to choose"
+    type: ingressclass
+    required: true
+    label: Ingress Class
 - variable: wordpress.service.type
   description: "WordPress Service type"
   type: enum
