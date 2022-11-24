@@ -451,6 +451,39 @@ entries:
       category: CMS
     apiVersion: v2
     appVersion: 5.9.3
+    created: "2022-11-24T14:20:54.777539604Z"
+    dependencies:
+    - name: wordpress
+      repository: https://charts.bitnami.com/bitnami
+      version: 13.x.x
+    description: Web publishing platform for building blogs and websites.
+    digest: 28439502335baf3214808a48a4514fa7487965156d56205def1af503c6201d03
+    home: https://github.com/bitnami/charts/tree/master/bitnami/wordpress
+    icon: https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png
+    keywords:
+    - application
+    - blog
+    - cms
+    - http
+    - php
+    - web
+    - wordpress
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    - name: Rancher
+      url: https://github.com/rancher
+    name: wordpress
+    sources:
+    - https://github.com/bitnami/bitnami-docker-wordpress
+    - https://wordpress.org/
+    urls:
+    - https://github.com/rancher/rodeo/releases/download/wordpress-13.0.24/wordpress-13.0.24.tgz
+    version: 13.0.24
+  - annotations:
+      category: CMS
+    apiVersion: v2
+    appVersion: 5.9.3
     created: "2022-05-13T07:44:36.486508863Z"
     dependencies:
     - name: wordpress
@@ -612,4 +645,4 @@ entries:
     urls:
     - https://github.com/rancher/rodeo/releases/download/wordpress-11.0.19/wordpress-11.0.19.tgz
     version: 11.0.19
-generated: "2022-09-15T09:41:38.211142013Z"
+generated: "2022-11-24T14:20:54.777630806Z"
